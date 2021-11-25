@@ -7,6 +7,16 @@ var min = 0;
 var sec = 0;
 var ms = 0;
 var interval;
+function initialDisplay(){
+    var stop = document.getElementById("stopbtn");
+    stop.disabled = true;
+    var reset = document.getElementById("resetbtn");
+    reset.disabled = true; 
+    var start = document.getElementById("startbtn");
+    start.style.color = "white";
+    
+}
+initialDisplay();
 function timer() {
     ms++;
     msPara.innerHTML = ms;
@@ -33,8 +43,14 @@ function start() {
     var reset = document.getElementById("resetbtn");       
     interval = setInterval(timer, 10)
     start.disabled = true;
+    start.style.color = "black";
+
     stop.disabled = false;
+    stop.style.color = "white";
     reset.disabled = false;  
+    reset.style.color = "white";
+    var boxes = document.getElementById("boxes");
+    boxes.className = "boxes";
    
 
 }
@@ -44,6 +60,11 @@ function stop() {
     clearInterval(interval);
     start.disabled = false;
     stop.disabled = true
+    start.style.color = "white";
+    stop.style.color = "black";
+    var boxes = document.getElementById("boxes");
+    boxes.className = "";
+   
 }
 function reset() {
     hourPara.innerHTML = 0;
@@ -61,13 +82,9 @@ function reset() {
     stop.disabled = true;
     var reset = document.getElementById("resetbtn");
     reset.disabled = true;  
+    reset.style.color = "black";
+    start.style.color = "white";
+    stop.style.color = "white";
 
 
 }
-function initialDisplay(){
-    var stop = document.getElementById("stopbtn");
-    stop.disabled = true;
-    var reset = document.getElementById("resetbtn");
-    reset.disabled = true;  
-}
-initialDisplay();
