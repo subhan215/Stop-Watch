@@ -28,7 +28,7 @@ function timer() {
     } else if (sec == 60) {
         min++;
         minPara.innerHTML = min;
-        sec = 0
+        sec = 0;
     } else if (min == 60) {
         hours++;
         hourPara.innerHTML = hours;
